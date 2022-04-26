@@ -7,6 +7,7 @@ import { PostCreateComponent } from './posts/post-create/post-create.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponnet } from './header/header.component';
 import { PostListComponent } from './posts/post-list/post-list.component';
+import {HttpClientModule} from '@angular/common/http'
 
 import {MatInputModule} from '@angular/material/input'
 import {MatCardModule} from '@angular/material/card'
@@ -33,7 +34,8 @@ import { PostService } from './posts/posts.service';
     MatCardModule,
     MatButtonModule,
     MatToolbarModule,
-    MatExpansionModule
+    MatExpansionModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
