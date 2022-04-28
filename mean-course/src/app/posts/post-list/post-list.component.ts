@@ -17,23 +17,23 @@ export class PostListComponent implements OnInit, OnDestroy{
 // ]
 
 posts: Post[] = [];
-private postsSub: Subscription | undefined;
+private postsSub!: Subscription;
 
-constructor(public postsService: PostService){}
+constructor(public postsService: PostService) {}
 
-ngOnInit(){
-  this.postsService.getPosts()
-  this.postsSub = this.postsService.getPostUpdatedListener()
-  .subscribe((posts: Post[])=>{
-    this.posts = posts;
-  })
+ngOnInit() {
+  this.postsService.getPosts();
+  this.postsSub = this.postsService.getPostUpdateListener()
+    .subscribe((posts: Post[]) => {
+      this.posts = posts;
+    });
 }
 
-onDelete(id:string){
-  this.postsService.deletePost(id)
+onDelete(postId: string) {
+  this.postsService.deletePost(postId);
 }
 
 ngOnDestroy() {
-this.postsService.unsubcribe()
+  this.postsSub.unsubscribe();
 }
 }
