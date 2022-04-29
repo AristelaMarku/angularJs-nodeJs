@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
@@ -16,7 +16,7 @@ import {MatToolbarModule} from '@angular/material/toolbar'
 import {MatExpansionModule} from '@angular/material/expansion'
 import { PostService } from './posts/posts.service';
 import { AppRoutingModule } from './app-routing.module';
-
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 
 
@@ -30,13 +30,14 @@ import { AppRoutingModule } from './app-routing.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule,
+    ReactiveFormsModule,
     BrowserAnimationsModule,
     MatInputModule,
     MatCardModule,
     MatButtonModule,
     MatToolbarModule,
     MatExpansionModule,
+    MatProgressSpinnerModule,
     HttpClientModule
   ],
   providers: [],
