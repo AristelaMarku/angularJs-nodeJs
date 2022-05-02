@@ -2,11 +2,12 @@ const express = require("express");
 const bodyParser =require("body-parser")
 const mongoose = require("mongoose")
 const path = require("path")
+require("dotenv").config()
 
 const postsRoutes = require("./routes/posts")
 const app = express();
 
-mongoose.connect("mongodb+srv://Stela:Nduedavadritan,7@cluster0.bovi6.mongodb.net/LearningMangoDb?retryWrites=true&w=majority")
+mongoose.connect("mongodb+srv://Stela:process.env.API_KEY@cluster0.bovi6.mongodb.net/LearningMangoDb?retryWrites=true&w=majority")
 .then(()=>{
   console.log('connected to database')
 })
